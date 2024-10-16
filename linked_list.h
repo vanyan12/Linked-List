@@ -1,5 +1,6 @@
 #ifndef LINKED_LIST_H
 #define LINKED_LIST_H
+#include <stdbool.h>
 
 typedef struct Node {
 	int x;
@@ -13,11 +14,12 @@ typedef struct {
 	Node* Head;
 } LinkedList;
 
-void addNode(LinkedList* list, Node* newNode);
-void delNode(LinkedList* list, Node* node);
+void addNode(LinkedList* list, Node* newNode, Node* addBefore, int show);
+void delNode(LinkedList* list, Node* node, int show);
 void freeLinkedList(LinkedList* list);
 LinkedList* CreateLinkedList();
-void LoopLinkedList(Node* p);
+void Traverse(Node* p);
+bool Serach(Node* p, int data);
 void ReverseLinkedList(LinkedList* list);
 
 #endif // LINKED_LIST_H
