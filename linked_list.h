@@ -19,7 +19,7 @@ void delNode(LinkedList* list, Node* node, int show);
 void freeLinkedList(LinkedList* list);
 LinkedList* CreateLinkedList();
 void Traverse(Node* p);
-bool Serach(Node* p, int data);
+bool Search(Node* p, int data);
 void ReverseLinkedList(LinkedList* list);
 
 #endif // LINKED_LIST_H

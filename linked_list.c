@@ -88,8 +88,6 @@ LinkedList* CreateLinkedList() {
 	return list;
 }
 
-
-
 void Traverse(Node* p)
 {
 
@@ -127,18 +125,59 @@ void ReverseLinkedList(LinkedList* list) {
 
 }
 
-bool Serach(Node* p, int data) {
+bool Search(Node* p, int data) {
 
 	while (p != NULL) {
 		if (p->x == data) {
-			printf("%d is in the linked list.", data);
+			printf("%d is in the linked list.\n", data);
 			return true;
 		}
 
 		p = p->next;
 	}
 
-	printf("%d is not in the linked list.", data);
+	printf("%d is not in the linked list.\n", data);
 	return false;
 }
 
+int main() {
+
+	//Creating emoty Linked List
+	LinkedList* list = CreateLinkedList();
+
+	//Creating nodes
+	Node a1 = { 1 };
+	Node a2 = { 2 };
+	Node a3 = { 3 };
+	Node a4 = { 4 };
+
+	//Adding nodes. If addBefore is NULL it will automatically add to the tail of list
+	addNode(list, &a1, NULL, 0);
+	addNode(list, &a2, NULL, 0);
+	addNode(list, &a3, NULL, 0);
+	addNode(list, &a4, &a3, 0);
+
+	//Printing linked list
+	Traverse(list->Head);
+
+	//Delating node
+	//delNode(list, &a2, 1);
+
+	Traverse(list->Head);
+
+	//Reversing linked list
+	ReverseLinkedList(list);
+
+	Traverse(list->Head);
+
+	//Searching data in linked list. Node* p is the node from which starts searching
+	Search(list->Head, 3);
+	Search(list->Head, 8);
+	Search(&a4, 3);
+
+
+
+	freeLinkedList(list);
+
+
+}
