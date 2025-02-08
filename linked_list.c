@@ -1,4 +1,3 @@
-
 #include "linked_list.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -129,14 +128,14 @@ bool Search(Node* p, int data) {
 
 	while (p != NULL) {
 		if (p->x == data) {
-			printf("%d is in the linked list.\n", data);
+			printf("%d is in the linked list.\n\n", data);
 			return true;
 		}
 
 		p = p->next;
 	}
 
-	printf("%d is not in the linked list.\n", data);
+	printf("%d is not in the linked list.\n\n", data);
 	return false;
 }
 
@@ -160,11 +159,6 @@ int main() {
 	//Printing linked list
 	Traverse(list->Head);
 
-	//Delating node
-	//delNode(list, &a2, 1);
-
-	Traverse(list->Head);
-
 	//Reversing linked list
 	ReverseLinkedList(list);
 
@@ -175,6 +169,15 @@ int main() {
 	Search(list->Head, 8);
 	Search(&a4, 3);
 
+	SortLinkedList(list);
+
+	Node a5 = { 2 };
+
+	addNode(list, &a5, NULL, 0);
+
+	Traverse(list->Head);
+
+	SortLinkedList(list);
 
 
 	freeLinkedList(list);

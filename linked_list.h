@@ -21,5 +21,6 @@ LinkedList* CreateLinkedList();
 void Traverse(Node* p);
 bool Search(Node* p, int data);
 void ReverseLinkedList(LinkedList* list);
+void SortLinkedList(LinkedList* list);
 
 #endif // LINKED_LIST_H
