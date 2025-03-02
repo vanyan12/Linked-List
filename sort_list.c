@@ -31,11 +31,17 @@ Node* Merge(Node* Left, Node* Right) {
 	if (Left != NULL) {
 		tail->next = Left;
 		Left->prev = tail;
+
+		Left = Left->next;
+		tail = tail->next;
 	}
 
 	if (Right != NULL) {
 		tail->next = Right;
 		Right->prev = tail;
+
+		Right = Right->next;
+		tail = tail->next;
 	}
 
 	// Closing First Node, making it as head
